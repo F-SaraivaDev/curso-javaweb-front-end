@@ -6,12 +6,32 @@
        }
    
    </style>
+   <script type="text/javascript">
+      function validarDados() {
+		var nome = document.getElementById("nome").value;
+		var login = document.getElementById("login").value;
+		var senha = document.getElementById("senha").value;
+		
+		if(nome == ''){
+			alert('Informe o nome!');
+			return false;
+		}else if(login == ''){
+			alert('Informe o login!');
+		    return false;
+		}else if(senha == ''){
+			alert('Informe a senha!');
+			return false;
+		}
+		return true;
+	}
+   
+   </script>
 
 </head>
 <body>
 
 	<!--  Mini Curso de Front-End -->
-	<form action="">
+	<form action="" method="post" onsubmit="return validarDados()? true : false">
 		<table style="background: #CFCFCF">
 			<tr>
 				<td><label>Nome:</label></td>
@@ -27,7 +47,7 @@
 			</tr>
 			<tr>
 				<td />
-				<td><input type="submit" value="salvar" style="border-radius: 5px; width: 100%"></td>
+				<td><input type="submit" value="salvar" style="border-radius: 5px; width: 100%"></td>                         
 			</tr>
 		</table>
 	</form>
